@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Introduction - Focus Theme</title>
+    <meta
+      name="description"
+      content="Focus is a clean portfolio theme for Bootstrap."
+    />
+
+    <!-- Goole fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,600;1,400&family=Playfair+Display:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Material icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/img/icon.png" type="image/png" />
+
+    <!-- PrismJS theme -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css"
+    />
+
+    <!-- JS -->
+    <script src="../assets/js/bootstrap.js" defer></script>
+    <script src="../assets/js/zoom-vanilla.js" defer></script>
+    <script src="../assets/js/scripts.js" defer></script>
+  </head>
+
+  <body>
+    <a href="#main" class="visually-hidden-focusable">Skip to main content</a>
+    <header>
+      <nav
+        class="navbar navbar-dark navbar-expand-lg fixed-top"
+        aria-label="Main"
+      >
+        <div class="container">
+          <a
+            href="../index.html"
+            class="navbar-brand d-inline-flex text-uppercase"
+            >Focus
+            <i class="material-icons ms-2" aria-hidden="true">donut_large</i></a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbar"
+            aria-controls="navbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="material-icons icon-2x" aria-hidden="true">menu</i>
+          </button>
+          <div class="collapse navbar-collapse text-uppercase" id="navbar">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a href="../pages.html" class="nav-link">Pages</a>
+              </li>
+              <li class="nav-item">
+                <a href="../style.html" class="nav-link">Style</a>
+              </li>
+              <li class="nav-item">
+                <a href="../docs/intro.html" class="nav-link active">Docs</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-lg-9 col-xxl-8 order-lg-1">
+          <main id="main" class="article mb-5">
+            <h1>Introduction</h1>
+            <p class="lead">A brief guide to get started with Focus.</p>
+
+            <p>To set up the theme, you need:</p>
+
+            <ul>
+              <li>A command line interface.</li>
+              <li>Node.js.</li>
+            </ul>
+
+            <p>
+              To install Node, go to
+              <a href="https://nodejs.org/en/">Node.js</a>, download it and
+              follow the steps.
+            </p>
+
+            <h2 class="mt-4">Files structure</h2>
+
+            <p>
+              Once you unzip the folder, you'll see the following file
+              structure:
+            </p>
+
+            <ul class="small">
+              <li><code>dist</code> - production files</li>
+              <li>
+                <code>src</code> - source files
+                <ul>
+                  <li><code>assets</code></li>
+                  <li><code>pages</code></li>
+                  <li><code>templates</code> - Nunjucks</li>
+                </ul>
+              </li>
+              <li><code>.eleventy.js</code> - Eleventy config</li>
+              <li><code>package.json</code> - NPM dependencies</li>
+              <li><code>purgecss.config.js</code> - PurgeCSS config</li>
+            </ul>
+
+            <p>
+              The <code>dist</code> folder contains the files you would upload
+              to your web server to publish the site.
+            </p>
+
+            <h2 class="mt-4">Development</h2>
+
+            <p>
+              Open your terminal, make sure you are in the same directory of the
+              unzipped theme, and run the following command to install all
+              dependencies:
+            </p>
+
+            <figure class="bg-dark rounded-2 mb-4 p-3">
+              <pre class="mb-0"><code>npm i</code></pre>
+            </figure>
+
+            <p>In the terminal, run the following command:</p>
+
+            <figure class="bg-dark rounded-2 mb-4 p-3">
+              <pre class="mb-0"><code>npm start</code></pre>
+            </figure>
+
+            <p>
+              It compiles the source files, generates the site using
+              <a href="https://www.11ty.dev/" target="_blank" rel="noopener"
+                >Eleventy</a
+              >, and starts a local server.
+            </p>
+
+            <p>
+              Now go to
+              <a href="http://localhost:8080">http://localhost:8080</a> in your
+              browser to see the site.
+            </p>
+
+            <h3>Front matter</h3>
+
+            <p>You can add metadata in your template front matter:</p>
+
+            <figure class="bg-dark rounded-2 mb-4 p-3">
+              <pre class="mb-0">
+<code>---
+layout: base
+title: Home
+description: Focus is a clean portfolio theme for Bootstrap.
+navbarColor: light
+permalink: /
+---</code>
+</pre>
+            </figure>
+
+            <ul>
+              <li>
+                <code>layout:</code> the template used to wrap the content.
+              </li>
+              <li><code>title:</code> page title.</li>
+              <li><code>description:</code> meta description.</li>
+              <li>
+                <code>navbarColor:</code> dark/light (optional, default is
+                "dark").
+              </li>
+              <li>
+                <code>permalink:</code> allows remapping your template's URI.
+              </li>
+            </ul>
+
+            <h2 class="mt-4">Optimization</h2>
+
+            <p>
+              Once your site is ready to publish, run the following command:
+            </p>
+
+            <figure class="bg-dark rounded-2 mb-4 p-3">
+              <pre class="mb-0"><code>npm run optim</code></pre>
+            </figure>
+
+            <p>
+              It generates the site from scratch, formats the HTML, removes
+              unused CSS, and compresses the images' size.
+            </p>
+          </main>
+        </div>
+        <div class="col-lg-3">
+          <nav class="side-nav sticky-top mt-1" aria-label="Docs">
+            <dl>
+              <dt class="fw-normal text-uppercase mb-2">Getting Started</dt>
+              <dd>
+                <a href="intro.html" class="active">Introduction</a>
+              </dd>
+              <dd>
+                <a href="changelog.html">Changelog</a>
+              </dd>
+              <dd>
+                <a href="customization.html">Customization</a>
+              </dd>
+              <dd>
+                <a href="updating.html">Updating</a>
+              </dd>
+              <dt class="fw-normal text-uppercase mt-4 mb-2">Components</dt>
+              <dd>
+                <a href="accordion.html">Accordion</a>
+              </dd>
+              <dd>
+                <a href="alerts.html">Alerts</a>
+              </dd>
+              <dd>
+                <a href="avatars.html">Avatars</a>
+              </dd>
+              <dd>
+                <a href="buttons.html">Buttons</a>
+              </dd>
+              <dd>
+                <a href="carousel.html">Carousel</a>
+              </dd>
+              <dd>
+                <a href="forms.html">Forms</a>
+              </dd>
+              <dd>
+                <a href="icons.html">Icons</a>
+              </dd>
+              <dd>
+                <a href="images.html">Images</a>
+              </dd>
+              <dd>
+                <a href="navbar.html">Navbar</a>
+              </dd>
+              <dd>
+                <a href="pagination.html">Pagination</a>
+              </dd>
+              <dd>
+                <a href="tables.html">Tables</a>
+              </dd>
+              <dt class="fw-normal text-uppercase mt-4 mb-2">Plugins</dt>
+              <dd>
+                <a href="zoom.html">Zoom</a>
+              </dd>
+            </dl>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
